@@ -6,12 +6,10 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-
 #include <map>
 #include <string>
 
 using namespace std;
-
 
 ///////////////////////
 //
@@ -34,27 +32,24 @@ using namespace std;
 // get_int_config - returns an integer value associated with
 //                  a key (must have numeric value), or a
 //                  default if the key doesn't exist
-class config
-{
+class config {
 public:
-    void load_config_file(string filename);
-    string get_config_value(string key);
-    void set_config_value(string key, string value);
-    int get_int_config(string key, int dflt);
+  void load_config_file(string filename);
+  string get_config_value(string key);
+  void set_config_value(string key, string value);
+  int get_int_config(string key, int dflt);
 
-    friend config& the_config();
+  friend config &the_config();
+
 private:
-    config()
-    {}
-    config(const config& rhs);
-    config& operator= (const config& rhs);
+  config() {
+  }
+  config(const config &rhs);
+  config &operator=(const config &rhs);
 
-    map<string, string> config_map;
+  map<string, string> config_map;
 };
 
-
-config& the_config();
-
+config &the_config();
 
 #endif // CONFIG_H
-

@@ -2,18 +2,15 @@
 // Copyright (C) <1998-2005>  Eli Bendersky
 //
 // This program is free software, licensed with the GPL (www.fsf.org)
-// 
+//
 #ifndef COND_H
 #define COND_H
 
-
-#include "cond_condition.h"
 #include "cond_action.h"
+#include "cond_condition.h"
 #include <vector>
 
-
 using namespace std;
-
 
 /// An aggregate for conditionals.
 ///
@@ -29,52 +26,49 @@ using namespace std;
 /// team are checked and if their conditions are satisfied,
 /// their action is executed.
 ///
-class cond
-{
+class cond {
 public:
-    /// Create a cond from a line.
-    ///
-    /// A line has the following structure:
-    /// action IF condition, condition, ...
-    ///
-    /// For example:
-    ///
-    /// TACTIC P IF SCORE >= 1, MIN >= 80
-    ///
-    /// Will create a cond with the action "TACTIC P"
-    /// and two conditions: "SCORE >= 1" and "MIN >= 80"
-    ///
-    string create(int team_num_, string line);
+  /// Create a cond from a line.
+  ///
+  /// A line has the following structure:
+  /// action IF condition, condition, ...
+  ///
+  /// For example:
+  ///
+  /// TACTIC P IF SCORE >= 1, MIN >= 80
+  ///
+  /// Will create a cond with the action "TACTIC P"
+  /// and two conditions: "SCORE >= 1" and "MIN >= 80"
+  ///
+  string create(int team_num_, string line);
 
-    /// Executes the cond.
-    ///
-    /// A cond execution is: iff all the conditions
-    /// are satisfied, execute the action.
-    ///
-    void test_and_execute(void);
+  /// Executes the cond.
+  ///
+  /// A cond execution is: iff all the conditions
+  /// are satisfied, execute the action.
+  ///
+  void test_and_execute(void);
 
 private:
-    /// The team number on which the cond is defined.
-    ///
-    int team_num;
+  /// The team number on which the cond is defined.
+  ///
+  int team_num;
 
-    /// A list of conditions of a cond.
-    ///
-    vector<cond_condition*> conditions;
+  /// A list of conditions of a cond.
+  ///
+  vector<cond_condition *> conditions;
 
-    /// The action of a cond.
-    ///
-    cond_action* action;
+  /// The action of a cond.
+  ///
+  cond_action *action;
 
-    /// Adds a condition to the list of cond's conditions.
-    ///
-    void add_condition(cond_condition* condition_);
+  /// Adds a condition to the list of cond's conditions.
+  ///
+  void add_condition(cond_condition *condition_);
 
-    /// Sets the cond action.
-    ///
-    void set_action(cond_action* action_);
+  /// Sets the cond action.
+  ///
+  void set_action(cond_action *action_);
 };
-
-
 
 #endif // COND_H

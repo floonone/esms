@@ -1,6 +1,6 @@
-// This is the source code for the "Mersenne Twister" PRNG, 
+// This is the source code for the "Mersenne Twister" PRNG,
 // adapted by me (mainly to comply to ISO C++ and to my coding
-// style) for ESMS. 
+// style) for ESMS.
 //
 /* A C-program for MT19937: Integer     version                   */
 /*  genrand() generates one pseudorandom unsigned integer (32bit) */
@@ -22,7 +22,7 @@
 /* See the GNU Library General Public License for more details.    */
 /* You should have received a copy of the GNU Library General      */
 /* Public License along with this library; if not, write to the    */
-/* Free Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA   */ 
+/* Free Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA   */
 /* 02111-1307  USA                                                 */
 
 /* Copyright (C) 1997 Makoto Matsumoto and Takuji Nishimura.       */
@@ -30,7 +30,7 @@
 /* see http://www.math.keio.ac.jp/matumoto/emt.html or email       */
 /* matumoto@math.keio.ac.jp                                        */
 
-// Should be given a seed (> 0) for the PRNG 
+// Should be given a seed (> 0) for the PRNG
 //
 void sgenrand(unsigned long seed);
 

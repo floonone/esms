@@ -2,13 +2,13 @@
 // Copyright (C) <1998-2005>  Eli Bendersky
 //
 // This program is free software, licensed with the GPL (www.fsf.org)
-// 
+//
 #ifndef COND_UTILS_H
 #define COND_UTILS_H
 
-#include <vector>
-#include <string>
 #include <cstdio>
+#include <string>
+#include <vector>
 
 using namespace std;
 
@@ -36,5 +36,3 @@ char fullpos2side(string fullpos);
 string pos_and_side2fullpos(string pos, char side);
 
 #endif // COND_UTILS_H
-
-

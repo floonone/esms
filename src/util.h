@@ -6,27 +6,22 @@
 #ifndef UTIL_H
 #define UTIL_H
 
-
-#include <vector>
-#include <string>
 #include <cstdio>
 #include <fstream>
-
+#include <string>
+#include <vector>
 
 using namespace std;
 
-
 typedef std::string::size_type str_index;
-
 
 vector<string> tokenize(string str, string delims = " \t\r\n");
 bool is_only_whitespace(string str);
 int str_atoi(string str);
 bool is_number(string str);
 void die(const char *fmt, ...);
-string format_str(const char* format, ...);
+string format_str(const char *format, ...);
 void MY_EXIT(int status);
-
 
 // Prints all elements in a STL container.
 // (useful for debugging).
@@ -37,16 +32,15 @@ void MY_EXIT(int status);
 // prelude - an optional string to be printed before the elements
 //
 template <class T>
-void print_elements(ofstream& stream, const T& coll, string delim = " ", string prelude = "")
-{
-    typename T::const_iterator pos;
+void print_elements(ofstream &stream, const T &coll, string delim = " ", string prelude = "") {
+  typename T::const_iterator pos;
 
-    stream << prelude;
+  stream << prelude;
 
-    for (pos = coll.begin(); pos != coll.end(); ++pos)
-        stream << *pos << delim;
+  for (pos = coll.begin(); pos != coll.end(); ++pos)
+    stream << *pos << delim;
 
-    stream << endl;
+  stream << endl;
 }
 
 #endif // UTIL_H
